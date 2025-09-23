@@ -1,0 +1,121 @@
+[
+  {
+    "id": "1",
+    "propertyId": "prop_1",
+    "propertyName": "Downtown Loft",
+    "guestName": "Sarah Johnson",
+    "overallRating": 4.5,
+    "categoryRatings": {
+      "cleanliness": 5,
+      "communication": 4,
+      "respect_house_rules": 5
+    },
+    "reviewText": "Amazing stay! The loft was spotless and exactly as described. Host was very responsive to messages. Would definitely stay again!",
+    "submittedDate": "2024-01-15T10:30:00Z",
+    "channel": "hostaway",
+    "status": "pending",
+    "isPubliclyVisible": false
+  },
+  {
+    "id": "2",
+    "propertyId": "prop_2",
+    "propertyName": "Seaside Villa",
+    "guestName": "Michael Chen",
+    "overallRating": 3.5,
+    "categoryRatings": {
+      "cleanliness": 3,
+      "communication": 4,
+      "respect_house_rules": 4
+    },
+    "reviewText": "Nice location but the place could use better cleaning. The view was great though and host was helpful.",
+    "submittedDate": "2024-01-12T14:22:00Z",
+    "channel": "hostaway",
+    "status": "pending",
+    "isPubliclyVisible": false
+  },
+  {
+    "id": "3",
+    "propertyId": "prop_1",
+    "propertyName": "Downtown Loft",
+    "guestName": "Emma Wilson",
+    "overallRating": 5.0,
+    "categoryRatings": {
+      "cleanliness": 5,
+      "communication": 5,
+      "respect_house_rules": 5
+    },
+    "reviewText": "Perfect stay! Everything was clean, modern, and exactly as advertised. Host went above and beyond.",
+    "submittedDate": "2024-01-10T09:15:00Z",
+    "channel": "hostaway",
+    "status": "approved",
+    "isPubliclyVisible": true
+  },
+  {
+    "id": "4",
+    "propertyId": "prop_3",
+    "propertyName": "Mountain Cabin",
+    "guestName": "David Rodriguez",
+    "overallRating": 4.0,
+    "categoryRatings": {
+      "cleanliness": 4,
+      "communication": 4,
+      "respect_house_rules": 4
+    },
+    "reviewText": "Great cabin with beautiful views. Kitchen was well-equipped. Only issue was WiFi was a bit slow.",
+    "submittedDate": "2024-01-08T16:45:00Z",
+    "channel": "hostaway",
+    "status": "approved",
+    "isPubliclyVisible": true
+  },
+  {
+    "id": "5",
+    "propertyId": "prop_2",
+    "propertyName": "Seaside Villa",
+    "guestName": "Lisa Thompson",
+    "overallRating": 2.0,
+    "categoryRatings": {
+      "cleanliness": 1,
+      "communication": 3,
+      "respect_house_rules": 3
+    },
+    "reviewText": "Very disappointed. Place was dirty when we arrived, dishes in sink, bathroom not cleaned properly.",
+    "submittedDate": "2024-01-05T11:30:00Z",
+    "channel": "hostaway",
+    "status": "pending",
+    "isPubliclyVisible": false
+  },
+  {
+    "id": "6",
+    "propertyId": "prop_1",
+    "propertyName": "Downtown Loft",
+    "guestName": "James Parker",
+    "overallRating": 4.8,
+    "categoryRatings": {
+      "cleanliness": 5,
+      "communication": 5,
+      "respect_house_rules": 4
+    },
+    "reviewText": "Excellent location in the heart of downtown. Walking distance to everything. Very clean and modern.",
+    "submittedDate": "2024-01-03T13:20:00Z",
+    "channel": "hostaway",
+    "status": "pending",
+    "isPubliclyVisible": false
+  },
+  {
+    "id": "7",
+    "propertyId": "prop_3",
+    "propertyName": "Mountain Cabin",
+    "guestName": "Amanda Foster",
+    "overallRating": 4.7,
+    "categoryRatings": {
+      "cleanliness": 5,
+      "communication": 4,
+      "respect_house_rules": 5
+    },
+    "reviewText": "Loved the peaceful mountain setting. Cabin was cozy and clean. Perfect for a weekend getaway!",
+    "submittedDate": "2024-01-01T08:45:00Z",
+    "channel": "hostaway",
+    "status": "pending",
+    "isPubliclyVisible": false
+  }
+]
