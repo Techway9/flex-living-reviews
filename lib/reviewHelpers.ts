@@ -48,7 +48,14 @@ export const getPropertyStats = (reviews: Review[]) => {
     }
     acc[review.propertyId].reviews.push(review);
     return acc;
-  }, {} as any);
+  }, {} as Record<string, {
+    name: string;
+    reviews: Review[];
+    totalReviews: number;
+    avgRating: number;
+    pendingCount: number;
+    approvedCount: number;
+  }>);
 
   Object.keys(propertyGroups).forEach(propId => {
     const prop = propertyGroups[propId];

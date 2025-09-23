@@ -58,41 +58,41 @@ export default function PropertyPage({ params }: { params: Promise<{ id: string 
   const propertyId = resolvedParams.id;
 
   useEffect(() => {
+    const fetchApprovedReviews = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('/api/reviews/hostaway');
+        const data = await response.json();
+        
+        if (data.status === 'success') {
+          const approved = data.data.filter((review: Review) => 
+            review.status === 'approved' && 
+            review.isPubliclyVisible &&
+            review.propertyId === propertyId
+          );
+          setApprovedReviews(approved);
+          
+          if (approved.length > 0) {
+            setPropertyName(approved[0].propertyName);
+          } else {
+            // Set a default name if no reviews found
+            const propertyNames: { [key: string]: string } = {
+              'prop_1': 'Downtown Loft',
+              'prop_2': 'Seaside Villa', 
+              'prop_3': 'Mountain Cabin'
+            };
+            setPropertyName(propertyNames[propertyId] || 'Property');
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching reviews:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchApprovedReviews();
   }, [propertyId]);
-
-  const fetchApprovedReviews = async () => {
-    try {
-      setLoading(true);
-      const response = await fetch('/api/reviews/hostaway');
-      const data = await response.json();
-      
-      if (data.status === 'success') {
-        const approved = data.data.filter((review: Review) => 
-          review.status === 'approved' && 
-          review.isPubliclyVisible &&
-          review.propertyId === propertyId
-        );
-        setApprovedReviews(approved);
-        
-        if (approved.length > 0) {
-          setPropertyName(approved[0].propertyName);
-        } else {
-          // Set a default name if no reviews found
-          const propertyNames: { [key: string]: string } = {
-            'prop_1': 'Downtown Loft',
-            'prop_2': 'Seaside Villa', 
-            'prop_3': 'Mountain Cabin'
-          };
-          setPropertyName(propertyNames[propertyId] || 'Property');
-        }
-      }
-    } catch (error) {
-      console.error('Error fetching reviews:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const averageRating = approvedReviews.length > 0 
     ? approvedReviews.reduce((sum, review) => sum + review.overallRating, 0) / approvedReviews.length 

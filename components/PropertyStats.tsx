@@ -5,12 +5,20 @@ interface PropertyStatsProps {
   reviews: Review[];
 }
 
+interface PropertyStat {
+  name: string;
+  totalReviews: number;
+  avgRating: number;
+  pendingCount: number;
+  approvedCount: number;
+}
+
 export default function PropertyStats({ reviews }: PropertyStatsProps) {
   const propertyStats = getPropertyStats(reviews);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-      {Object.entries(propertyStats).map(([propId, stats]: [string, any]) => (
+      {Object.entries(propertyStats).map(([propId, stats]: [string, PropertyStat]) => (
         <div key={propId} className="bg-white rounded-lg border p-4 shadow-sm">
           <h3 className="font-semibold text-lg mb-3">{stats.name}</h3>
           
