@@ -34,8 +34,17 @@ export const getStarRating = (rating: number): string => {
   return stars;
 };
 
-export const getPropertyStats = (reviews: Review[]) => {
-  const propertyGroups = reviews.reduce((acc, review) => {
+interface PropertyStatGroup {
+  name: string;
+  reviews: Review[];
+  totalReviews: number;
+  avgRating: number;
+  pendingCount: number;
+  approvedCount: number;
+}
+
+export const getPropertyStats = (reviews: Review[]): Record<string, PropertyStatGroup> => {
+  const propertyGroups = reviews.reduce((acc: Record<string, PropertyStatGroup>, review) => {
     if (!acc[review.propertyId]) {
       acc[review.propertyId] = {
         name: review.propertyName,
@@ -48,14 +57,7 @@ export const getPropertyStats = (reviews: Review[]) => {
     }
     acc[review.propertyId].reviews.push(review);
     return acc;
-  }, {} as Record<string, {
-    name: string;
-    reviews: Review[];
-    totalReviews: number;
-    avgRating: number;
-    pendingCount: number;
-    approvedCount: number;
-  }>);
+  }, {});
 
   Object.keys(propertyGroups).forEach(propId => {
     const prop = propertyGroups[propId];

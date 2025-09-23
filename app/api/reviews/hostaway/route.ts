@@ -85,10 +85,16 @@ export async function PUT(request: Request) {
       reviewId,
       newStatus: status
     });
-  } catch (error) {
-    return NextResponse.json(
-      { status: 'error', message: 'Failed to update review' },
-      { status: 500 }
-    );
-  }
+  } catch (err) {
+  console.error('Error fetching reviews:', err);
+  
+  return NextResponse.json(
+    { 
+      status: 'error', 
+      message: 'Failed to fetch reviews',
+      error: err instanceof Error ? err.message : 'Unknown error'
+    },
+    { status: 500 }
+  );
+}
 }
